@@ -4,5 +4,7 @@
 自分の開発環境用の Gentoo Dockerfile
 
 ```bash
-$ docker run -ti
+$ alias d='docker run -ti eiel/development-environment'
+$ d cat /etc/gentoo-release
+$ d
 ```
