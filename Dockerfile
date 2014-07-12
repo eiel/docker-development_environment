@@ -1,10 +1,10 @@
-FROM eiel/gentoo
+FROM eiel/gentoo-portage
 MAINTAINER Tomohiko Himura <eiel.hal@gmail.com>
 
-WORKDIR /usr
-ADD install-portage.sh .
-RUN sh /install-portage.sh
 ADD make.conf /etc/portage/make.conf
-RUN emerge eix
+RUN emerge -U @system
+RUN emerge eix portage-utils gentoolkit
 RUN eix-update
-CMD bash
+
+RUN emerge zsh zsh-completion dev-vcs/git vim emacs tig
+CMD zsh
