@@ -2,7 +2,6 @@ FROM eiel/gentoo-portage
 MAINTAINER Tomohiko Himura <eiel.hal@gmail.com>
 
 ADD make.conf /etc/portage/make.conf
-RUN emerge -U @system
 RUN emerge eix portage-utils gentoolkit
 RUN eix-update
 
